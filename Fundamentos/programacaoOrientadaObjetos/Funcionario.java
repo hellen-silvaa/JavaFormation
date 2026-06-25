@@ -1,27 +1,20 @@
 package Fundamentos.programacaoOrientadaObjetos;
-
 public class Funcionario {
-    String nome;
-    String cargo;
-    int idade;
+    private String nome;
+    public double salario;
 
-    static void main() {
-        Funcionario funcionario1 = new Funcionario();
-        funcionario1.nome = "Hellen";
-        funcionario1.cargo = "Engenheira de Software";
-        funcionario1.idade = 20;
+    public Funcionario(String nomeInit, double salarioInit) {
+        nome = nomeInit;
+        salario = salarioInit;
+    }
+    public String obterInfo() {
+        return "Nome: " + nome + ", Salario: " + salario;
+    }
 
-        Funcionario funcionario2 = new Funcionario();
-        funcionario2.nome = "Maria";
-        funcionario2.cargo = "Gerente";
-        funcionario2.idade = 50;
-
-        System.out.println("Nome: " + funcionario1.nome);
-        System.out.println("Cargo: " + funcionario1.cargo);
-        System.out.println("Idade: " + funcionario1.idade);
-
-        System.out.println("Nome: " + funcionario2.nome);
-        System.out.println("Cargo: " + funcionario2.cargo);
-        System.out.println("Idade: " + funcionario2.idade);
+    public void aumentarSalario(double aumento) {
+        salario += aumento;
+    }
+    public void aumentarSalario(int porcentagem) {
+        salario += salario * porcentagem / 100.0;
     }
 }
